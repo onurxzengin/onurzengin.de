@@ -7,7 +7,7 @@ export default function Contact() {
   const pgpUrl = `https://keys.openpgp.org/vks/v1/by-fingerprint/${fingerprint}`;
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-zinc-900 to-zinc-800 font-sans text-zinc-100">
+    <div className="min-h-screen flex items-center justify-center bg-black font-sans text-zinc-100">
       <main className="w-full max-w-6xl p-8">
         {/* Desktop: Side-by-Side */}
         <div className="hidden md:grid md:grid-cols-2 gap-12 items-center">
@@ -17,7 +17,7 @@ export default function Contact() {
               <h1 className="text-5xl font-bold text-zinc-100 mb-6">E-Mail</h1>
               <Link
                 href="mailto:info@onurzengin.de"
-                className="block text-4xl font-black text-blue-400 hover:text-blue-300 underline underline-offset-8 transition-colors cursor-pointer"
+                className="block text-4xl font-black text-red-400 hover:text-red-300 underline underline-offset-8 transition-colors cursor-pointer"
               >
                 info@onurzengin.de
               </Link>
@@ -27,7 +27,7 @@ export default function Contact() {
                 href="/public.asc"
                 download="onur-zengin-public-key.asc"
                 className="inline-flex items-center justify-center gap-3
-                 bg-blue-800 hover:bg-blue-700 text-zinc-100 px-10 py-6  font-bold text-xl w-full transition-colors cursor-pointer border border-blue-700"
+                 bg-red-800 hover:bg-red-700 text-zinc-100 px-10 py-6  font-bold text-xl w-full transition-colors cursor-pointer border border-red-700"
               >
                 <KeyRound size={24} />
                 OpenPGP Key herunterladen
@@ -112,17 +112,17 @@ export default function Contact() {
             <Link
               href="mailto:info@onurzengin.de"
               className="block w-full text-center text-3xl font-black
-               text-blue-400 hover:text-blue-300 underline 
+               text-red-400 hover:text-red-300 underline 
                underline-offset-8 mx-auto transition-colors cursor-pointer"
             >
               info@onurzengin.de
             </Link>
 
-            <div className="bg-blue-950/30 p-8  border-2 border-blue-800 mx-auto max-w-md w-full">
+            <div className="bg-red-950/30 p-8  border-2 border-red-800 mx-auto max-w-md w-full">
               <Link
                 href="/public.asc"
                 download="onur-zengin-public-key.asc"
-                className="inline-flex items-center justify-center gap-3 bg-blue-800 border-2 border-blue-700 hover:bg-blue-700 text-white px-8 py-5
+                className="inline-flex items-center justify-center gap-3 bg-red-800 border-2 border-red-700 hover:bg-red-700 text-white px-8 py-5
                   font-bold text-lg w-full transition-colors cursor-pointer"
               >
                 <KeyRound size={24} />
