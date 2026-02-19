@@ -62,7 +62,7 @@ export default function Contact() {
               aria-label="Über Signal chatten"
             >
               <Image 
-                src={"/signal-username-qr-code.png"}
+                src="/signal-username-qr-code.png" 
                 alt="Signal QR-Code für Onur Zengin"
                 priority 
                 quality={100} 
