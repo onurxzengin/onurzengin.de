@@ -1,156 +1,98 @@
-import Image from "next/image";
 import Link from "next/link";
-import { Info, KeyRound } from 'lucide-react';
+import { Mail, MessageCircle, Instagram, KeyRound, ArrowUpRight, Shield } from 'lucide-react';
 
 export default function Contact() {
-  const fingerprint = "20482FDC3A11B6ABB6094A3D1AFCB7A04DEDDCDC";
-  const pgpUrl = `https://keys.openpgp.org/vks/v1/by-fingerprint/${fingerprint}`;
+  const fingerprint = "2048 2FDC 3A11 B6AB B609 4A3D 1AFC B7A0 4DED DCDC";
+
+  const links = [
+    {
+      title: "E-Mail",
+      subtitle: "info@onurzengin.de",
+      href: "mailto:info@onurzengin.de",
+      icon: <Mail className="w-5 h-5 text-zinc-600" />,
+    },
+    {
+      title: "WhatsApp",
+      subtitle: "Business Chat",
+      href: "https://wa.me/4915224173654",
+      icon: <MessageCircle className="w-5 h-5 text-zinc-600" />,
+    },
+    {
+      title: "Instagram",
+      subtitle: "@onur24zn",
+      href: "https://instagram.com/onur24zn",
+      icon: <Instagram className="w-5 h-5 text-zinc-600" />,
+    },
+  ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black font-sans text-zinc-100">
-      <main className="w-full max-w-6xl p-8">
-        {/* Desktop: Side-by-Side */}
-        <div className="hidden md:grid md:grid-cols-2 gap-12 items-center">
-          {/* Links: E-Mail + PGP */}
-          <div className="space-y-8">
+    <div className="min-h-screen bg-[#F8F8F8] font-sans text-black flex flex-col items-center justify-center p-6 italic-none">
+      <div className="w-full max-w-[420px] space-y-12">
+        
+        {/* Header */}
+        <div className="text-left space-y-2 border-l-2 border-black pl-4">
+          <h1 className="text-2xl font-bold tracking-tight uppercase">
+            Onur Zengin
+          </h1>
+          <p className="text-[11px] text-zinc-500 uppercase tracking-[0.3em] font-medium">
+            Contact Linktree
+          </p>
+        </div>
+
+        {/* Links Stack */}
+        <div className="space-y-2">
+          {links.map((link) => (
+            <Link
+              key={link.title}
+              href={link.href}
+              target="_blank"
+              className="flex items-center justify-between p-5 bg-white border border-zinc-200 hover:border-black transition-all duration-200 group shadow-sm hover:shadow-md"
+            >
+              <div className="flex items-center gap-4">
+                <div className="group-hover:text-black transition-colors">{link.icon}</div>
+                <div>
+                  <div className="text-[14px] font-bold uppercase tracking-wide">{link.title}</div>
+                  <div className="text-[12px] text-zinc-400 font-medium">{link.subtitle}</div>
+                </div>
+              </div>
+              <ArrowUpRight className="w-4 h-4 text-zinc-300 group-hover:text-black transition-all" />
+            </Link>
+          ))}
+        </div>
+
+        {/* PGP Section */}
+        <div className="pt-8 border-t border-zinc-200">
+          <div className="flex items-center gap-2 mb-4 text-zinc-400">
+            <Shield size={14} />
+            <h2 className="text-[10px] font-bold uppercase tracking-[0.2em]">Encrypted Email</h2>
+          </div>
+
+          <div className="bg-zinc-100 p-6 space-y-5 border border-zinc-200">
             <div>
-              <h1 className="text-5xl font-bold text-zinc-100 mb-6">E-Mail</h1>
-              <Link
-                href="mailto:info@onurzengin.de"
-                className="block text-4xl font-black text-red-400 hover:text-red-300 underline underline-offset-8 transition-colors cursor-pointer"
-              >
-                info@onurzengin.de
-              </Link>
-            </div>
-
-              <Link
-                href="/public.asc"
-                download="onur-zengin-public-key.asc"
-                className="inline-flex items-center justify-center gap-3
-                 bg-red-800 hover:bg-red-700 text-zinc-100 px-10 py-6  font-bold text-xl w-full transition-colors cursor-pointer border border-red-700"
-              >
-                <KeyRound size={24} />
-                OpenPGP Key herunterladen
-              </Link>
-
-            <div className="bg-zinc-800 p-8 ">
-              <strong className="block text-2xl mb-6 font-mono text-white">Fingerprint:</strong>
-              <div className="grid grid-cols-3 gap-4 text-lg font-mono text-white">
-                <span>2048 2FDC</span>
-                <span>3A11 B6AB</span>
-                <span>B609 4A3D</span>
-                <span>1AFC B7A0</span>
-                <span>4DED DCDC</span>
-                <span></span>
-              </div>
+              <span className="text-[9px] text-zinc-400 font-bold uppercase tracking-widest">ECC25519 Fingerprint</span>
+              <p className="text-[11px] font-mono text-zinc-600 mt-1 leading-relaxed tracking-wider">
+                {fingerprint}
+              </p>
             </div>
 
             <Link
-              href={pgpUrl}
-              className="block text-lg text-zinc-500 hover:text-zinc-400 underline transition-colors"
+              href="/public.asc"
+              download="onur-zengin-public-key.asc"
+              className="flex items-center justify-center w-full py-4 bg-black text-white text-[12px] font-bold uppercase tracking-widest hover:bg-zinc-800 transition-colors"
             >
-              keys.openpgp.org
+              <KeyRound size={16} className="mr-2" />
+              Download Public Key
             </Link>
-          </div>
-
-          {/* Rechts: Signal */}
-          <div className="space-y-8 text-center">
-            <h1 className="text-5xl font-bold text-white">Signal Messenger</h1>
-            <Link 
-              href="https://signal.me/#eu/MN_oNHNKKSGV8gIZOdy2VN4GGqn6cVQqTYHfAhK-c9QlJG9NxJVC04qVKC1YAYK7"
-              className="block mx-auto cursor-pointer hover:opacity-90 transition-opacity"
-              aria-label="Über Signal chatten"
-            >
-              <Image 
-                src="/signal-username-qr-code.png" 
-                alt="Signal QR-Code für Onur Zengin"
-                priority 
-                quality={100} 
-                width={400}
-                height={400}
-                className="w-full"
-              />
-            </Link>
-            <p className="flex gap-3 justify-center items-center text-xl text-zinc-400">
-              <Info size={24} />
-              Zum Chatten klicken oder scannen
-            </p>
           </div>
         </div>
 
-        {/* Mobile: Vertical Stack */}
-        <div className="md:hidden mt-8 flex flex-col space-y-16">
-          {/* Signal oben */}
-          <section className="space-y-8 text-center">
-            <h1 className="text-4xl font-bold text-zinc-100">Signal Messenger</h1>
-            <Link 
-              href="https://signal.me/#eu/MN_oNHNKKSGV8gIZOdy2VN4GGqn6cVQqTYHfAhK-c9QlJG9NxJVC04qVKC1YAYK7"
-              className="flex flex-col justify-center cursor-pointer  items-center hover:opacity-90 transition-opacity"
-              aria-label="Über Signal chatten"
-            >
-              <Image 
-                src="/signal-username-qr-code.png" 
-                alt="Signal QR-Code für Onur Zengin"
-                priority 
-                quality={100} 
-                width={350}
-                height={350}
-              />
-            </Link>
-            <p className="flex gap-3 justify-center items-center text-lg text-zinc-400">
-              <Info size={20} />
-              Zum Chatten klicken oder scannen
-            </p>
-          </section>
-
-          {/* Divider */}
-          <div className="w-full h-px bg-zinc-700"></div>
-
-          {/* E-Mail + PGP unten */}
-          <section className="space-y-8">
-            <h1 className="text-4xl font-bold text-white text-center">E-Mail</h1>
-            <Link
-              href="mailto:info@onurzengin.de"
-              className="block w-full text-center text-3xl font-black
-               text-red-400 hover:text-red-300 underline 
-               underline-offset-8 mx-auto transition-colors cursor-pointer"
-            >
-              info@onurzengin.de
-            </Link>
-
-            <div className="bg-red-950/30 p-8  border-2 border-red-800 mx-auto max-w-md w-full">
-              <Link
-                href="/public.asc"
-                download="onur-zengin-public-key.asc"
-                className="inline-flex items-center justify-center gap-3 bg-red-800 border-2 border-red-700 hover:bg-red-700 text-white px-8 py-5
-                  font-bold text-lg w-full transition-colors cursor-pointer"
-              >
-                <KeyRound size={24} />
-                OpenPGP Key herunterladen
-              </Link>
-            </div>
-
-            <div className="bg-zinc-800 p-6 mx-auto max-w-md w-full">
-              <strong className="block text-xl mb-4 font-mono text-zinc-200 text-center">Fingerprint:</strong>
-              <div className="grid grid-cols-3 gap-2 text-sm font-mono text-zinc-400 justify-items-center">
-                <span>2048 2FDC</span>
-                <span>3A11 B6AB</span>
-                <span>B609 4A3D</span>
-                <span>1AFC B7A0</span>
-                <span>4DED DCDC</span>
-                <span></span>
-              </div>
-            </div>
-
-            <Link
-              href={pgpUrl}
-              className="block text-lg text-zinc-500 hover:text-zinc-400 underline transition-colors text-center"
-            >
-              keys.openpgp.org
-            </Link>
-          </section>
-        </div>
-      </main>
+        {/* Footer */}
+        <footer className="text-center">
+          <p className="text-[10px] text-zinc-400 font-medium uppercase tracking-widest">
+            © 2026 Onur Zengin 
+          </p>
+        </footer>
+      </div>
     </div>
   );
 }
