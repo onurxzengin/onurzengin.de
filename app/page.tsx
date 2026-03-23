@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MessageCircle, Instagram, KeyRound, ArrowUpRight, Shield } from 'lucide-react';
+import { Mail, MessageCircle, Instagram, Github, Phone, Lock, KeyRound, ArrowUpRight, Shield } from 'lucide-react';
 
 export default function Contact() {
   const fingerprint = "2048 2FDC 3A11 B6AB B609 4A3D 1AFC B7A0 4DED DCDC";
@@ -12,16 +12,28 @@ export default function Contact() {
       icon: <Mail className="w-5 h-5 text-zinc-600" />,
     },
     {
-      title: "WhatsApp",
-      subtitle: "Business Chat",
-      href: "https://wa.me/4915224173654",
+      title: "Signal",
+      subtitle: "onurzengin.24",
+      href: "https://signal.me/#eu/0Q9ymMcjijtqadO-spjHRYz3pJfD3LTJoAimG7PvfYx1l5PM5idNt7I3RdASpXXl",
+      icon: <Lock className="w-5 h-5 text-zinc-600" />,
+    },
+    {
+      title: "Matrix",
+      subtitle: "@onurzengin:matrix.org",
+      href: "https://matrix.to/#/@onurzengin:matrix.org",
       icon: <MessageCircle className="w-5 h-5 text-zinc-600" />,
     },
     {
       title: "Instagram",
-      subtitle: "@onur24zn",
-      href: "https://instagram.com/onur24zn",
+      subtitle: "@onur.zn",
+      href: "https://instagram.com/onur.zn",
       icon: <Instagram className="w-5 h-5 text-zinc-600" />,
+    },
+    {
+      title: "GitHub",
+      subtitle: "onurxzengin",
+      href: "https://github.com/onurxzengin",
+      icon: <Github className="w-5 h-5 text-zinc-600" />,
     },
   ];
 
