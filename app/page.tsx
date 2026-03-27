@@ -23,18 +23,6 @@ export default function Contact() {
       href: "https://matrix.to/#/@onurzengin:matrix.org",
       icon: <MessageCircle className="w-5 h-5 text-zinc-600" />,
     },
-    {
-      title: "Instagram",
-      subtitle: "@onur.zn",
-      href: "https://instagram.com/onur.zn",
-      icon: <Instagram className="w-5 h-5 text-zinc-600" />,
-    },
-    {
-      title: "GitHub",
-      subtitle: "onurxzengin",
-      href: "https://github.com/onurxzengin",
-      icon: <Github className="w-5 h-5 text-zinc-600" />,
-    },
   ];
 
   return (
