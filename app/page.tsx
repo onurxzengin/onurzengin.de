@@ -47,7 +47,7 @@ export default function Contact() {
           <div className="flex items-center gap-2">
             <div className="h-[2px] rounded-lg w-8 bg-[#6D4AFF]" />
             <p className="text-xs text-zinc-400 uppercase tracking-[0.3em]">
-              Kontakt Linktre
+              Kontakt Linktree
             </p>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function Contact() {
         </div>
 
 <footer className="pt-6 border-t border-[#1F1F2B] flex items-center justify-between text-[11px] text-zinc-500">
-  <span>© {new Date().getFullYear()} Onur</span>
+  <span>© {new Date().getFullYear()} Onur Zengin</span>
 
   <Link
     href="https://keys.openpgp.org/vks/v1/by-fingerprint/20482FDC3A11B6ABB6094A3D1AFCB7A04DEDDCDC"
