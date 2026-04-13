@@ -1,97 +1,108 @@
 import Link from "next/link";
-import { Mail, MessageCircle, Instagram, Github, Phone, Lock, KeyRound, ArrowUpRight, Shield } from 'lucide-react';
+import { Mail, MessageCircle, Lock, ArrowUpRight, Calendar, KeyRound } from 'lucide-react';
 
 export default function Contact() {
-  const fingerprint = "2048 2FDC 3A11 B6AB B609 4A3D 1AFC B7A0 4DED DCDC";
-
   const links = [
     {
       title: "E-Mail",
       subtitle: "info@onurzengin.de",
       href: "mailto:info@onurzengin.de",
-      icon: <Mail className="w-5 h-5 text-zinc-600" />,
+      icon: <Mail className="w-5 h-5" />,
     },
     {
       title: "Signal",
       subtitle: "onurzengin.24",
-      href: "https://signal.me/#eu/0Q9ymMcjijtqadO-spjHRYz3pJfD3LTJoAimG7PvfYx1l5PM5idNt7I3RdASpXXl",
-      icon: <Lock className="w-5 h-5 text-zinc-600" />,
+      href: "https://signal.me/#eu/...",
+      icon: <Lock className="w-5 h-5" />,
     },
     {
       title: "Matrix",
       subtitle: "@onurzengin:matrix.org",
       href: "https://matrix.to/#/@onurzengin:matrix.org",
-      icon: <MessageCircle className="w-5 h-5 text-zinc-600" />,
+      icon: <MessageCircle className="w-5 h-5" />,
+    },
+    {
+      title: "Termin vereinbaren",
+      subtitle: "Meet Call – 60 Minuten",
+      href: "https://calendar.proton.me/...",
+      icon: <Calendar className="w-5 h-5" />,
     },
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8F8F8] font-sans text-black flex flex-col items-center justify-center p-6 italic-none">
-      <div className="w-full max-w-[420px] space-y-12">
+    <div className="relative min-h-screen bg-[#0B0B0F] text-white flex items-center justify-center p-6 overflow-hidden">
+      
+      {/* Background Glow */}
+      <div className="absolute w-[600px] h-[600px] bg-[#6D4AFF]/20 blur-[120px] rounded-full top-[-100px] left-[-100px]" />
+      <div className="absolute w-[500px] h-[500px] bg-purple-500/10 blur-[100px] rounded-full bottom-[-120px] right-[-120px]" />
+
+      <div className="relative w-full max-w-[420px] space-y-12">
         
         {/* Header */}
-        <div className="text-left space-y-2 border-l-2 border-black pl-4">
-          <h1 className="text-2xl font-bold tracking-tight uppercase">
+        <div className="space-y-3">
+          <h1 className="text-3xl font-bold tracking-tight">
             Onur Zengin
           </h1>
-          <p className="text-[11px] text-zinc-500 uppercase tracking-[0.3em] font-medium">
-            Contact Linktree
-          </p>
+
+          <div className="flex items-center gap-2">
+            <div className="h-[2px] rounded-lg w-8 bg-[#6D4AFF]" />
+            <p className="text-xs text-zinc-400 uppercase tracking-[0.3em]">
+              Kontakt Linktre
+            </p>
+          </div>
         </div>
 
-        {/* Links Stack */}
-        <div className="space-y-2">
+        {/* Links */}
+        <div className="space-y-4">
           {links.map((link) => (
             <Link
               key={link.title}
               href={link.href}
               target="_blank"
-              className="flex items-center justify-between p-5 bg-white border border-zinc-200 hover:border-black transition-all duration-200 group shadow-sm hover:shadow-md"
+              className="group relative flex items-center justify-between p-5 rounded-2xl
+              bg-[#12121A]/80 backdrop-blur-xl
+              border border-[#1F1F2B]
+              hover:border-[#6D4AFF]/60
+              transition-all duration-300
+              hover:shadow-[0_0_30px_rgba(109,74,255,0.15)]
+              hover:-translate-y-1"
             >
-              <div className="flex items-center gap-4">
-                <div className="group-hover:text-black transition-colors">{link.icon}</div>
+              {/* subtle gradient overlay */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300
+              bg-gradient-to-r from-[#6D4AFF]/10 via-transparent to-purple-500/10" />
+
+              <div className="flex items-center gap-4 relative z-10">
+                <div className="text-[#6D4AFF] group-hover:scale-110 transition duration-300">
+                  {link.icon}
+                </div>
+
                 <div>
-                  <div className="text-[14px] font-bold uppercase tracking-wide">{link.title}</div>
-                  <div className="text-[12px] text-zinc-400 font-medium">{link.subtitle}</div>
+                  <div className="text-[14px] font-semibold tracking-wide">
+                    {link.title}
+                  </div>
+                  <div className="text-[12px] text-zinc-500">
+                    {link.subtitle}
+                  </div>
                 </div>
               </div>
-              <ArrowUpRight className="w-4 h-4 text-zinc-300 group-hover:text-black transition-all" />
+
+              <ArrowUpRight className="w-4 h-4 text-zinc-600 group-hover:text-[#6D4AFF] group-hover:translate-x-1 group-hover:-translate-y-1 transition duration-300 relative z-10" />
             </Link>
           ))}
         </div>
 
-        {/* PGP Section */}
-        <div className="pt-8 border-t border-zinc-200">
-          <div className="flex items-center gap-2 mb-4 text-zinc-400">
-            <Shield size={14} />
-            <h2 className="text-[10px] font-bold uppercase tracking-[0.2em]">Encrypted Email</h2>
-          </div>
+<footer className="pt-6 border-t border-[#1F1F2B] flex items-center justify-between text-[11px] text-zinc-500">
+  <span>© {new Date().getFullYear()} Onur</span>
 
-          <div className="bg-zinc-100 p-6 space-y-5 border border-zinc-200">
-            <div>
-              <span className="text-[9px] text-zinc-400 font-bold uppercase tracking-widest">ECC25519 Fingerprint</span>
-              <p className="text-[11px] font-mono text-zinc-600 mt-1 leading-relaxed tracking-wider">
-                {fingerprint}
-              </p>
-            </div>
+  <Link
+    href="https://keys.openpgp.org/vks/v1/by-fingerprint/20482FDC3A11B6ABB6094A3D1AFCB7A04DEDDCDC"
+    target="_blank"
+    className="hover:text-[#6D4AFF] transition"
+  >
+    keys.openpgp.org
+  </Link>
+</footer>
 
-            <Link
-              href="/public.asc"
-              download="onur-zengin-public-key.asc"
-              className="flex items-center justify-center w-full py-4 bg-black text-white text-[12px] font-bold uppercase tracking-widest hover:bg-zinc-800 transition-colors"
-            >
-              <KeyRound size={16} className="mr-2" />
-              Download Public Key
-            </Link>
-          </div>
-        </div>
-
-        {/* Footer */}
-        <footer className="text-center">
-          <p className="text-[10px] text-zinc-400 font-medium uppercase tracking-widest">
-            © 2026 Onur Zengin 
-          </p>
-        </footer>
       </div>
     </div>
   );
