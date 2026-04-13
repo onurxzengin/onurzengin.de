@@ -24,7 +24,7 @@ export default function Contact() {
     {
       title: "Termin vereinbaren",
       subtitle: "Meet Call – 60 Minuten",
-      href: "https://calendar.proton.me/...",
+      href: "https://calendar.proton.me/bookings#x79LayeXaOGS6GF5N1pfvcQy_pIJnaXm7O9kDS1yoTs=",
       icon: <Calendar className="w-5 h-5" />,
     },
   ];
