@@ -12,7 +12,7 @@ export default function Contact() {
     {
       title: "Signal",
       subtitle: "onurzengin.24",
-      href: "https://signal.me/#eu/...",
+      href: "https://signal.me/#eu/0Q9ymMcjijtqadO-spjHRYz3pJfD3LTJoAimG7PvfYx1l5PM5idNt7I3RdASpXXl",
       icon: <Lock className="w-5 h-5" />,
     },
     {
