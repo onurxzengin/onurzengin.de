@@ -1,0 +1,115 @@
+---
+import { Mail, MessageCircle, Lock, ArrowUpRight, Calendar } from "@lucide/astro";
+
+const links = [
+  {
+    title: "E-Mail",
+    subtitle: "info@onurzengin.de",
+    href: "mailto:info@onurzengin.de",
+    icon: Mail,
+  },
+  {
+    title: "Signal",
+    subtitle: "onurzengin.24",
+    href: "https://signal.me/#eu/0Q9ymMcjijtqadO-spjHRYz3pJfD3LTJoAimG7PvfYx1l5PM5idNt7I3RdASpXXl",
+    icon: Lock,
+  },
+  {
+    title: "Matrix",
+    subtitle: "@onurzengin:matrix.org",
+    href: "https://matrix.to/#/@onurzengin:matrix.org",
+    icon: MessageCircle,
+  },
+  {
+    title: "Termin vereinbaren",
+    subtitle: "Meet Call – 60 Minuten",
+    href: "https://calendar.proton.me/bookings#x79LayeXaOGS6GF5N1pfvcQy_pIJnaXm7O9kDS1yoTs=",
+    icon: Calendar,
+  },
+];
+
+const year = new Date().getFullYear();
+---
+
+    <!-- Background Glow -->
+    <div class="absolute w-[600px] h-[600px] bg-[#6D4AFF]/20 blur-[120px] rounded-full top-[-100px] left-[-100px]"></div>
+    <div class="absolute w-[500px] h-[500px] bg-purple-500/10 blur-[100px] rounded-full bottom-[-120px] right-[-120px]"></div>
+
+    <main class="relative w-full max-w-[420px] space-y-12">
+      <!-- Header -->
+      <section class="space-y-3">
+        <h1 class="text-3xl font-bold tracking-tight">
+          Onur Zengin
+        </h1>
+
+        <div class="flex items-center gap-2">
+          <div class="h-[2px] rounded-lg w-8 bg-[#6D4AFF]"></div>
+
+          <p class="text-xs text-zinc-400 uppercase tracking-[0.3em]">
+            Kontakt Linktree
+          </p>
+        </div>
+      </section>
+
+      <!-- Links -->
+      <section class="space-y-4">
+        {
+          links.map((link) => {
+            const Icon = link.icon;
+
+            return (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative flex items-center justify-between p-5 rounded-2xl
+                bg-[#12121A]/80 backdrop-blur-xl
+                border border-[#1F1F2B]
+                hover:border-[#6D4AFF]/60
+                transition-all duration-300
+                hover:shadow-[0_0_30px_rgba(109,74,255,0.15)]
+                hover:-translate-y-1"
+              >
+                <div class="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 bg-gradient-to-r from-[#6D4AFF]/10 via-transparent to-purple-500/10"></div>
+
+                <div class="flex items-center gap-4 relative z-10">
+                  <div class="text-[#6D4AFF] group-hover:scale-110 transition duration-300">
+                    <Icon class="w-5 h-5" />
+                  </div>
+
+                  <div>
+                    <div class="text-[14px] font-semibold tracking-wide">
+                      {link.title}
+                    </div>
+
+                    <div class="text-[12px] text-zinc-500">
+                      {link.subtitle}
+                    </div>
+                  </div>
+                </div>
+
+                <ArrowUpRight class="w-4 h-4 text-zinc-600 group-hover:text-[#6D4AFF] group-hover:translate-x-1 group-hover:-translate-y-1 transition duration-300 relative z-10" />
+              </a>
+            );
+          })
+        }
+      </section>
+
+      <!-- Footer -->
+      <footer class="pt-6 border-t border-[#1F1F2B] flex items-center justify-between text-[11px] text-zinc-500">
+        <span>© {year} Onur Zengin</span>
+
+        <a
+          href="https://keys.openpgp.org/vks/v1/by-fingerprint/20482FDC3A11B6ABB6094A3D1AFCB7A04DEDDCDC"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-[#6D4AFF] transition"
+        >
+          keys.openpgp.org
+        </a>
+      </footer>
+    </main>
+
+    <style>
+  
+    </style>

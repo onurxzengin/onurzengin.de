@@ -1,45 +1,46 @@
-# Personal Website Onur Zengin
+# Astro Starter Kit: Basics
 
-Next.js, TypeScript und Tailwind CSS.
+```sh
+npm create astro@latest -- --template basics
+```
 
-## Voraussetzungen
-Bevor du startest, müssen **Node.js** (LTS Version empfohlen) und **pnpm** auf deinem System installiert sein:
-- [Node.js herunterladen](https://nodejs.org)
-- pnpm global installieren: `npm install -g pnpm`
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## Installation
+## 🚀 Project Structure
 
-### 1. Projekt öffnen in VS Code
-Ordner in Visual Studio Code öffnen.
+Inside of your Astro project, you'll see the following folders and files:
 
-### 2. Abhängigkeiten installieren
-Terminal öffnen und folgenden Befehl ausführen: `pnpm i`
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
+```
 
-### 3. Lokale Entwicklung
-`pnpm run dev` Development Server Starten. <br/>
-`localhost:3000` Im Browser aufrufen. <br/>
-`/app/page.tsx` Öffnen und bearbeiten. <br/>
-Änderungen werden sofort sichtbar.
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-### 4. Github Repository 
-Neues Github Repository erstellen unter: 
-https://github.com/new
+## 🧞 Commands
 
-Den dort angezeigten Code unter:
- 
-#### "…or create a new repository on the command line"
-`git init`<br/>
-`git add .` <br/>
-`git commit -m "first commit"` <br/>
-`git branch -M main` <br/>
-`git remote add origin https://github.com/benutzername/projektname.git` <br/>
-`git push -u origin main`
+All commands are run from the root of the project, from a terminal:
 
-### 5. Deployment
-Nutzer ohne Vorkenntnisse können über [Vercel](https://vercel.com) oder [Netlify](https://www.netlify.com) das Github Repository importieren. <br/>
-Erfahrene Nutzer können ihre eigenen VPS oder Cloud-Lösungen nutzen.
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
----
-### Fragen an info@onurzengin.de
-# onurzengin.de
-# onurzengin.de
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
