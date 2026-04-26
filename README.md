@@ -1,1 +1,1 @@
-# onurzengin.de
+# minimalistic contact linktree for personal website
